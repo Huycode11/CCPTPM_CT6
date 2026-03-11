@@ -11,7 +11,7 @@
 
             const isPassword = input.type === "password";
             input.type = isPassword ? "text" : "password";
-            this.textContent = isPassword ? "Hide" : "Show";
+            this.classList.toggle("active", isPassword);
         });
     });
 
@@ -38,7 +38,10 @@
             errorBox.textContent = "Dang ky thanh cong (demo).";
             registerForm.reset();
             toggleButtons.forEach((button) => {
-                button.textContent = "Show";
+                const targetId = button.getAttribute("data-target");
+                const input = targetId ? document.getElementById(targetId) : null;
+                if (input) input.type = "password";
+                button.classList.remove("active");
             });
         });
     }
