@@ -1,142 +1,198 @@
-// Shopping Cart System
-let cartItems = [];
-let cartCount = 0;
+// ===============================
+// SHOPPING CART SYSTEM
+// ===============================
 
-// Add to cart function
-function addToCart(productName, price) {
-    const item = {
-        id: Date.now(),
-        name: productName,
-        price: price,
-        quantity: 1
-    };
+// Lấy dữ liệu giỏ hàng từ localStorage
+let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
-    // Check if item already exists
-    const existingItem = cartItems.find(p => p.name === productName);
+// ===============================
+// THÊM SẢN PHẨM VÀO GIỎ
+// ===============================
+function addToCart(name, price) {
+
+    const existingItem = cart.find(item => item.name === name);
+
     if (existingItem) {
         existingItem.quantity++;
     } else {
-        cartItems.push(item);
+        cart.push({
+            id: Date.now(),
+            name: name,
+            price: price,
+            quantity: 1
+        });
     }
 
-    cartCount++;
+    saveCart();
     updateCartCount();
-    showNotification(`${productName} đã được thêm vào giỏ hàng`);
+    showNotification(name + " đã được thêm vào giỏ hàng");
 }
 
-// Update cart count display
+// ===============================
+// LƯU GIỎ HÀNG
+// ===============================
+function saveCart() {
+    localStorage.setItem("cart", JSON.stringify(cart));
+}
+
+// ===============================
+// CẬP NHẬT SỐ LƯỢNG ICON GIỎ
+// ===============================
 function updateCartCount() {
-    const cartCountElement = document.querySelector('.cart-count');
-    if (cartCountElement) {
-        cartCountElement.textContent = cartCount;
-    }
+
+    const countElement = document.querySelector(".cart-count");
+
+    if (!countElement) return;
+
+    let totalQuantity = 0;
+
+    cart.forEach(item => {
+        totalQuantity += item.quantity;
+    });
+
+    countElement.textContent = totalQuantity;
 }
 
-// Show notification
+// ===============================
+// HIỂN THỊ GIỎ HÀNG TRONG cart.html
+// ===============================
+function displayCart() {
+
+    const table = document.getElementById("cart-items");
+    const totalElement = document.getElementById("cart-total");
+
+    if (!table || !totalElement) return;
+
+    table.innerHTML = "";
+
+    let total = 0;
+
+    cart.forEach((item, index) => {
+
+        const itemTotal = item.price * item.quantity;
+        total += itemTotal;
+
+        const row = `
+        <tr>
+            <td>${item.name}</td>
+
+            <td>
+                ${item.price.toLocaleString("vi-VN")} VND
+            </td>
+
+            <td>
+                ${item.quantity}
+            </td>
+
+            <td>
+                ${itemTotal.toLocaleString("vi-VN")} VND
+            </td>
+
+            <td>
+                <button onclick="removeItem(${index})">
+                    Xóa
+                </button>
+            </td>
+        </tr>
+        `;
+
+        table.innerHTML += row;
+    });
+
+    totalElement.textContent = total.toLocaleString("vi-VN");
+}
+
+// ===============================
+// XÓA SẢN PHẨM
+// ===============================
+function removeItem(index) {
+
+    cart.splice(index, 1);
+
+    saveCart();
+
+    displayCart();
+
+    updateCartCount();
+}
+
+// ===============================
+// THÔNG BÁO
+// ===============================
 function showNotification(message) {
-    const notification = document.createElement('div');
-    notification.className = 'notification';
+
+    const notification = document.createElement("div");
+
     notification.textContent = message;
+
     notification.style.cssText = `
         position: fixed;
         top: 20px;
         right: 20px;
-        background-color: #27ae60;
+        background: #27ae60;
         color: white;
         padding: 15px 20px;
-        border-radius: 5px;
-        z-index: 1000;
-        animation: slideIn 0.3s ease-in-out;
+        border-radius: 6px;
+        font-size: 14px;
+        z-index: 9999;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.2);
     `;
 
     document.body.appendChild(notification);
 
     setTimeout(() => {
-        notification.style.animation = 'slideOut 0.3s ease-in-out';
-        setTimeout(() => {
-            notification.remove();
-        }, 300);
+        notification.remove();
     }, 2000);
 }
 
-// Smooth scrolling for navigation links
+// ===============================
+// SMOOTH SCROLL
+// ===============================
 document.querySelectorAll('a[href^="#"]').forEach(link => {
-    link.addEventListener('click', function(e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
+
+    link.addEventListener("click", function(e) {
+
+        const target = document.querySelector(this.getAttribute("href"));
+
         if (target) {
+
+            e.preventDefault();
+
             target.scrollIntoView({
-                behavior: 'smooth',
-                block: 'start'
+                behavior: "smooth"
             });
         }
+
     });
+
 });
 
-// Contact form submission
-const contactForm = document.querySelector('.contact-form');
+// ===============================
+// FORM LIÊN HỆ
+// ===============================
+const contactForm = document.querySelector(".contact-form");
+
 if (contactForm) {
-    contactForm.addEventListener('submit', function(e) {
+
+    contactForm.addEventListener("submit", function(e) {
+
         e.preventDefault();
-        showNotification('Cảm ơn bạn đã gửi tin nhắn! Chúng tôi sẽ liên hệ sớm.');
+
+        showNotification("Cảm ơn bạn đã gửi tin nhắn!");
+
         this.reset();
-    });
-}
 
-// Cart icon click handler
-document.querySelector('.cart-icon').addEventListener('click', function() {
-    if (cartItems.length === 0) {
-        showNotification('Giỏ hàng trống');
-    } else {
-        showCartSummary();
-    }
-});
-
-// Show cart summary
-function showCartSummary() {
-    let total = 0;
-    let summary = 'Giỏ hàng của bạn:\n';
-
-    cartItems.forEach(item => {
-        const itemTotal = item.price * item.quantity;
-        total += itemTotal;
-        summary += `${item.name} x ${item.quantity} = ${itemTotal.toLocaleString('vi-VN')} VND\n`;
     });
 
-    summary += `\nTổng: ${total.toLocaleString('vi-VN')} VND`;
-
-    alert(summary);
 }
 
-// Initialize
-document.addEventListener('DOMContentLoaded', function() {
-    console.log('Website đã tải thành công!');
+// ===============================
+// KHI WEBSITE LOAD
+// ===============================
+document.addEventListener("DOMContentLoaded", function () {
+
     updateCartCount();
+
+    displayCart();
+
 });
-
-// Add animation styles dynamically
-const style = document.createElement('style');
-style.textContent = `
-    @keyframes slideIn {
-        from {
-            transform: translateX(400px);
-            opacity: 0;
-        }
-        to {
-            transform: translateX(0);
-            opacity: 1;
-        }
-    }
-
-    @keyframes slideOut {
-        from {
-            transform: translateX(0);
-            opacity: 1;
-        }
-        to {
-            transform: translateX(400px);
-            opacity: 0;
-        }
-    }
-`;
-document.head.appendChild(style);
