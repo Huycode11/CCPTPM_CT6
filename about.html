@@ -1,10 +1,9 @@
-<!-- đặt ở trong header hoặc nơi bạn muốn hiển thị giỏ -->
-</div><!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="vi">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cửa hàng bán hàng trực tuyến</title>
+    <title>Về chúng tôi - ShopStore</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -16,8 +15,8 @@
             </div>
             <nav class="navbar">
                 <ul>
-                    <li><a href="#home">Trang chủ</a></li>
-                    <li><a href="#products">Sản phẩm</a></li>
+                    <li><a href="index.html">Trang chủ</a></li>
+                    <li><a href="index.html#products">Sản phẩm</a></li>
                     <li><a href="about.html">Về chúng tôi</a></li>
                     <li><a href="contact.html">Liên hệ</a></li>
                 </ul>
@@ -31,62 +30,46 @@
         </div>
     </header>
 
-    <!-- Hero Section -->
-    <section class="hero" id="home">
-        <div class="hero-content">
-            <h2>Chào mừng đến Shop của chúng tôi</h2>
-            <p>Những sản phẩm chất lượng cao với giá cả phải chăng</p>
-            <button class="btn btn-primary">Mua ngay</button>
-        </div>
-    </section>
-
-    <!-- Products Section -->
-    <section class="products" id="products">
+    <!-- About Section -->
+    <section class="about" id="about">
         <div class="container">
-            <h2>Sản phẩm nổi bật</h2>
-            <div class="product-grid">
-                <div class="product-card">
-                    <div class="product-image">
-                        <img src="images/product1.jpg" alt="Sản phẩm 1">
-                    </div>
-                    <div class="product-info">
-                        <h3>Sản phẩm 1</h3>
-                        <p class="price">99.000 VND</p>
-                        <button class="btn btn-add-cart" onclick="addToCart('Sản phẩm 1', 99000)">Thêm vào giỏ</button>
-                    </div>
+            <h2>Về chúng tôi</h2>
+            <p>Chúng tôi cung cấp những sản phẩm chất lượng cao, được lựa chọn kỹ càng từ các nhà cung cấp uy tín.</p>
+            
+            <div class="about-content" style="margin-top: 40px;">
+                <div class="about-section">
+                    <h3>Sứ mệnh của chúng tôi</h3>
+                    <p>Mang đến cho khách hàng những sản phẩm tốt nhất với giá cả hợp lý, tạo trải nghiệm mua sắm tuyệt vời.</p>
                 </div>
 
-                <div class="product-card">
-                    <div class="product-image">
-                        <img src="images/product2.jpg" alt="Sản phẩm 2">
-                    </div>
-                    <div class="product-info">
-                        <h3>Sản phẩm 2</h3>
-                        <p class="price">149.000 VND</p>
-                        <button class="btn btn-add-cart" onclick="addToCart('Sản phẩm 2', 149000)">Thêm vào giỏ</button>
-                    </div>
+                <div class="about-section">
+                    <h3>Tầm nhìn của chúng tôi</h3>
+                    <p>Trở thành cửa hàng trực tuyến hàng đầu tại Việt Nam, phục vụ hàng triệu khách hàng với sự tin tưởng và chất lượng dịch vụ tuyệt vời.</p>
                 </div>
 
-                <div class="product-card">
-                    <div class="product-image">
-                        <img src="images/product3.jpg" alt="Sản phẩm 3">
-                    </div>
-                    <div class="product-info">
-                        <h3>Sản phẩm 3</h3>
-                        <p class="price">199.000 VND</p>
-                        <button class="btn btn-add-cart" onclick="addToCart('Sản phẩm 3', 199000)">Thêm vào giỏ</button>
-                    </div>
+                <div class="about-section">
+                    <h3>Giá trị cốt lõi</h3>
+                    <ul>
+                        <li><strong>Chất lượng:</strong> Luôn lựa chọn những sản phẩm tốt nhất</li>
+                        <li><strong>Tin cậy:</strong> Luôn đặt lợi ích khách hàng lên trên</li>
+                        <li><strong>Cách tân:</strong> Không ngừng cải tiến dịch vụ</li>
+                        <li><strong>Tôn trọng:</strong> Tôn trọng tất cả khách hàng và đối tác</li>
+                    </ul>
                 </div>
 
-                <div class="product-card">
-                    <div class="product-image">
-                        <img src="images/product4.jpg" alt="Sản phẩm 4">
-                    </div>
-                    <div class="product-info">
-                        <h3>Sản phẩm 4</h3>
-                        <p class="price">129.000 VND</p>
-                        <button class="btn btn-add-cart" onclick="addToCart('Sản phẩm 4', 129000)">Thêm vào giỏ</button>
-                    </div>
+                <div class="about-section">
+                    <h3>Lịch sử ShopStore</h3>
+                    <p>ShopStore được thành lập vào năm 2024 với mục tiêu mang lại một nền tảng mua sắm trực tuyến an toàn, tiện lợi và đáng tin cậy cho người tiêu dùng Việt Nam.</p>
+                </div>
+
+                <div class="about-section">
+                    <h3>Chính sách của chúng tôi</h3>
+                    <ul>
+                        <li><strong>Miễn phí vận chuyển:</strong> Cho đơn hàng trên 500.000 VND</li>
+                        <li><strong>Hỗ trợ đổi trả:</strong> Trong 7 ngày kể từ khi nhận hàng</li>
+                        <li><strong>Thanh toán an toàn:</strong> Hỗ trợ nhiều phương thức thanh toán</li>
+                        <li><strong>Hỗ trợ khách hàng 24/7:</strong> Sẵn sàng giúp đỡ bất cứ lúc nào</li>
+                    </ul>
                 </div>
             </div>
         </div>
