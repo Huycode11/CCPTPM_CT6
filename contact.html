@@ -1,10 +1,9 @@
-<!-- đặt ở trong header hoặc nơi bạn muốn hiển thị giỏ -->
-</div><!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="vi">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cửa hàng bán hàng trực tuyến</title>
+    <title>Liên hệ - ShopStore</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -16,11 +15,10 @@
             </div>
             <nav class="navbar">
                 <ul>
-                    <li><a href="#home">Trang chủ</a></li>
-                    <li><a href="#products">Sản phẩm</a></li>
+                    <li><a href="index.html">Trang chủ</a></li>
+                    <li><a href="index.html#products">Sản phẩm</a></li>
                     <li><a href="about.html">Về chúng tôi</a></li>
                     <li><a href="contact.html">Liên hệ</a></li>
-                    <li><a href="login.html">Đăng nhập</a></li>
                 </ul>
             </nav>
             <!-- cart container with dropdown -->
@@ -32,61 +30,63 @@
         </div>
     </header>
 
-    <!-- Hero Section -->
-    <section class="hero" id="home">
-        <div class="hero-content">
-            <h2>Chào mừng đến Shop của chúng tôi</h2>
-            <p>Những sản phẩm chất lượng cao với giá cả phải chăng</p>
-            <button class="btn btn-primary">Mua ngay</button>
-        </div>
-    </section>
-
-    <!-- Products Section -->
-    <section class="products" id="products">
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
         <div class="container">
-            <h2>Sản phẩm nổi bật</h2>
-            <div class="product-grid">
-                <div class="product-card">
-                    <div class="product-image">
-                        <img src="images/product1.jpg" alt="Sản phẩm 1">
-                    </div>
-                    <div class="product-info">
-                        <h3>Sản phẩm 1</h3>
-                        <p class="price">99.000 VND</p>
-                        <button class="btn btn-add-cart" onclick="addToCart('Sản phẩm 1', 99000)">Thêm vào giỏ</button>
-                    </div>
+            <h2>Liên hệ</h2>
+            
+            <div class="contact-wrapper">
+                <!-- Contact Form -->
+                <div class="contact-form-wrapper">
+                    <h3>Gửi tin nhắn cho chúng tôi</h3>
+                    <form class="contact-form">
+                        <input type="text" placeholder="Tên của bạn" required>
+                        <input type="email" placeholder="Email" required>
+                        <textarea placeholder="Tin nhắn của bạn" rows="5" required></textarea>
+                        <button type="submit" class="btn btn-primary">Gửi</button>
+                    </form>
                 </div>
 
-                <div class="product-card">
-                    <div class="product-image">
-                        <img src="images/product2.jpg" alt="Sản phẩm 2">
+                <!-- Contact Info -->
+                <div class="contact-info-wrapper">
+                    <h3>Thông tin liên hệ</h3>
+                    <div class="contact-info">
+                        <div class="info-item">
+                            <h4>📞 Điện thoại</h4>
+                            <p><a href="tel:0909123456">0909 123 456</a></p>
+                        </div>
+                        <div class="info-item">
+                            <h4>📧 Email</h4>
+                            <p><a href="mailto:info@shopstore.com">info@shopstore.com</a></p>
+                        </div>
+                        <div class="info-item">
+                            <h4>📍 Địa chỉ</h4>
+                            <p>123 Đường ABC, Thành phố, Quốc gia</p>
+                        </div>
+                        <div class="info-item">
+                            <h4>🕐 Giờ cửa hàng</h4>
+                            <p>9:00 AM - 10:00 PM, Thứ 2 - Chủ Nhật</p>
+                        </div>
                     </div>
-                    <div class="product-info">
-                        <h3>Sản phẩm 2</h3>
-                        <p class="price">149.000 VND</p>
-                        <button class="btn btn-add-cart" onclick="addToCart('Sản phẩm 2', 149000)">Thêm vào giỏ</button>
-                    </div>
-                </div>
 
-                <div class="product-card">
-                    <div class="product-image">
-                        <img src="images/product3.jpg" alt="Sản phẩm 3">
-                    </div>
-                    <div class="product-info">
-                        <h3>Sản phẩm 3</h3>
-                        <p class="price">199.000 VND</p>
-                        <button class="btn btn-add-cart" onclick="addToCart('Sản phẩm 3', 199000)">Thêm vào giỏ</button>
-                    </div>
-                </div>
-
-                <div class="product-card">
-                    <div class="product-image">
-                        <img src="images/product4.jpg" alt="Sản phẩm 4">
-                    </div>
-                    <div class="product-info">
-                        <h3>Sản phẩm 4</h3>
-                        <p class="price">129.000 VND</p>
-                        <button class="btn btn-add-cart" onclick="addToCart('Sản phẩm 4', 129000)">Thêm vào giỏ</button>
+                    <div class="contact-faq">
+                        <h3>Câu hỏi thường gặp</h3>
+                        <div class="faq-item">
+                            <h4>Làm thế nào để theo dõi đơn hàng của tôi?</h4>
+                            <p>Bạn có thể theo dõi đơn hàng thông qua email xác nhận hoặc vào "Đơn Hàng" trong tài khoản của bạn.</p>
+                        </div>
+                        <div class="faq-item">
+                            <h4>Chính sách đổi trả là gì?</h4>
+                            <p>Chúng tôi hỗ trợ đổi trả sản phẩm trong vòng 7 ngày kể từ khi nhận hàng nếu sản phẩm bị lỗi hoặc không đúng mô tả.</p>
+                        </div>
+                        <div class="faq-item">
+                            <h4>Bạn có hỗ trợ COD không?</h4>
+                            <p>Có, chúng tôi hỗ trợ thanh toán khi nhận hàng (COD) cho tất cả các đơn hàng.</p>
+                        </div>
+                        <div class="faq-item">
+                            <h4>Phí vận chuyển là bao nhiêu?</h4>
+                            <p>Miễn phí vận chuyển cho đơn hàng trên 500.000 VND. Đối với đơn hàng nhỏ hơn, phí vận chuyển sẽ được tính tùy theo khu vực.</p>
+                        </div>
                     </div>
                 </div>
             </div>
