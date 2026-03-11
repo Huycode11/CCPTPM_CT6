@@ -32,23 +32,53 @@
 
     <!-- Login Section -->
     <section class="login-section">
-        <div class="container">
-            <div class="login-form">
-                <h2>Đăng nhập</h2>
-                <form action="#" method="post">
-                    <div class="form-group">
-                        <label for="email">Email:</label>
-                        <input type="email" id="email" name="email" required>
+        <div class="login-container">
+            <!-- Left Side -->
+            <div class="login-left">
+                <div class="login-left-content">
+                    <div class="logo-badge">S</div>
+                    <h2>ShopStore</h2>
+                    <h3>Buy smarter, checkout faster.</h3>
+                    <p>Đăng ký tài khoan để lưu giữ hang đã lưu, theo dõi đơn và nhận ưu đãi dành riêng cho thành viên mới.</p>
+                    <ul class="features-list">
+                        <li>Freeship cho đơn hàng đầu tiên</li>
+                        <li>Lưu địa chỉ và thông tin thanh toán an toàn</li>
+                        <li>Thông báo Flash Sale theo sản phẩm bạn quan tâm</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Right Side -->
+            <div class="login-right">
+                <div class="login-right-content">
+                    <div class="logo-badge-right">S</div>
+                    <h2>ShopStore</h2>
+                    <h3>Đăng nhập tài khoản</h3>
+                    <p>Chào mừng bạn quay trở lại</p>
+
+                    <form class="login-form-group" action="#" method="post">
+                        <div class="form-group">
+                            <input type="email" id="email" name="email" placeholder="Email Address" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="password" id="password" name="password" placeholder="Password" required>
+                        </div>
+
+                        <div class="form-options">
+                            <label class="checkbox-container">
+                                <input type="checkbox" id="remember-me" name="remember-me">
+                                <span class="checkmark"></span>
+                                Ghi nhớ đăng nhập
+                            </label>
+                            <a href="#" class="forgot-password">Quên mật khẩu?</a>
+                        </div>
+
+                        <button type="submit" class="btn btn-login">Đăng nhập</button>
+                    </form>
+
+                    <div class="login-footer">
+                        <p>Chưa có tài khoản? <a href="register.html">Đăng ký ngay</a></p>
                     </div>
-                    <div class="form-group">
-                        <label for="password">Mật khẩu:</label>
-                        <input type="password" id="password" name="password" required>
-                    </div>
-                    <button type="submit" class="btn btn-primary">Đăng nhập</button>
-                </form>
-                <div class="login-links">
-                    <a href="#">Quên mật khẩu?</a>
-                    <a href="#">Đăng ký tài khoan</a>
                 </div>
             </div>
         </div>
