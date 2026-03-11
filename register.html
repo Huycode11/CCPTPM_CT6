@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dang ky - ShopStore</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="auth-body">
+    <main class="auth-page">
+        <section class="auth-card" aria-labelledby="register-title">
+            <div class="auth-brand">
+                <a href="index.html" class="brand-link">
+                    <span class="brand-icon">S</span>
+                    <span class="brand-name">ShopStore</span>
+                </a>
+            </div>
+
+            <header class="auth-header">
+                <h1 id="register-title">Create your account</h1>
+                <p>Join ShopStore and start shopping today</p>
+            </header>
+
+            <form id="register-form" class="auth-form" action="#" method="post" novalidate>
+                <div class="auth-field">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                </div>
+
+                <div class="auth-field">
+                    <label for="username">Username</label>
+                    <input type="text" id="username" name="username" placeholder="Choose a username" required>
+                </div>
+
+                <div class="auth-field">
+                    <label for="fullName">Full Name</label>
+                    <input type="text" id="fullName" name="fullName" placeholder="Enter your full name" required>
+                </div>
+
+                <div class="auth-field auth-password-field">
+                    <label for="password">Password</label>
+                    <div class="password-wrapper">
+                        <input type="password" id="password" name="password" placeholder="Create a password" required minlength="6">
+                        <button type="button" class="toggle-password" data-target="password" aria-label="Hien hoac an mat khau">Show</button>
+                    </div>
+                </div>
+
+                <div class="auth-field auth-password-field">
+                    <label for="confirmPassword">Confirm Password</label>
+                    <div class="password-wrapper">
+                        <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Confirm your password" required minlength="6">
+                        <button type="button" class="toggle-password" data-target="confirmPassword" aria-label="Hien hoac an mat khau">Show</button>
+                    </div>
+                </div>
+
+                <label class="auth-checkbox">
+                    <input type="checkbox" id="terms" name="terms" required>
+                    <span>
+                        I agree to the
+                        <a href="about.html">Terms of Service</a>
+                        and
+                        <a href="contact.html">Privacy Policy</a>
+                    </span>
+                </label>
+
+                <p class="auth-error" id="register-error" aria-live="polite"></p>
+
+                <button type="submit" class="btn btn-primary auth-submit">Create Account</button>
+            </form>
+
+            <div class="auth-footer">
+                <p>Already have an account?</p>
+                <a href="login.html">Sign in instead</a>
+            </div>
+        </section>
+    </main>
+
+    <script src="js/auth.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>
