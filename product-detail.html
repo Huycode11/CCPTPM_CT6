@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chi tiết sản phẩm - ShopStore</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <h1>ShopStore</h1>
+            </div>
+            <nav class="navbar">
+                <ul>
+                    <li><a href="index.html">Trang chủ</a></li>
+                    <li><a href="index.html#products">Sản phẩm</a></li>
+                    <li><a href="about.html">Về chúng tôi</a></li>
+                    <li><a href="contact.html">Liên hệ</a></li>
+                </ul>
+            </nav>
+            <!-- cart container with dropdown -->
+            <div class="cart-container">
+                <a href="cart.html" class="cart-icon">
+                    🛒 <span class="cart-count" id="cart-count">0</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Product Detail Section -->
+    <section class="product-detail">
+        <div class="container">
+            <div class="product-detail-wrapper">
+                <!-- Product Image -->
+                <div class="product-detail-image">
+                    <img id="product-image" src="images/product1.jpg" alt="Sản phẩm">
+                </div>
+
+                <!-- Product Info -->
+                <div class="product-detail-info">
+                    <h1 id="product-name">Sản phẩm 1</h1>
+                    <div class="product-rating">
+                        <span class="stars">★★★★★</span>
+                        <span class="rating-text">(4.5/5 - 128 đánh giá)</span>
+                    </div>
+                    <div class="product-price-section">
+                        <span class="product-price" id="product-price">99.000 VND</span>
+                        <span class="product-old-price" id="product-old-price">149.000 VND</span>
+                        <span class="product-discount" id="product-discount">-33%</span>
+                    </div>
+                    
+                    <div class="product-description">
+                        <h3>Mô tả sản phẩm</h3>
+                        <p id="product-description">
+                            Đây là một sản phẩm chất lượng cao với thiết kế hiện đại và tính năng vượt trội. 
+                            Sản phẩm được làm từ nguyên liệu tốt nhất, đảm bảo độ bền và hiệu suất cao. 
+                            Phù hợp cho mọi nhu cầu sử dụng hàng ngày.
+                        </p>
+                    </div>
+
+                    <div class="product-specs">
+                        <h3>Thông số kỹ thuật</h3>
+                        <ul>
+                            <li><strong>Chất liệu:</strong> <span id="spec-material">Cao cấp</span></li>
+                            <li><strong>Kích thước:</strong> <span id="spec-size">Tiêu chuẩn</span></li>
+                            <li><strong>Màu sắc:</strong> <span id="spec-color">Đa dạng</span></li>
+                            <li><strong>Bảo hành:</strong> <span id="spec-warranty">12 tháng</span></li>
+                        </ul>
+                    </div>
+
+                    <div class="product-quantity">
+                        <label for="quantity">Số lượng:</label>
+                        <div class="quantity-controls">
+                            <button class="quantity-btn" onclick="decreaseQuantity()">-</button>
+                            <input type="number" id="quantity" value="1" min="1" max="99">
+                            <button class="quantity-btn" onclick="increaseQuantity()">+</button>
+                        </div>
+                    </div>
+
+                    <div class="product-actions">
+                        <button class="btn btn-add-cart-detail" onclick="addToCartFromDetail()">
+                            🛒 Thêm vào giỏ hàng
+                        </button>
+                        <button class="btn btn-buy-now" onclick="buyNow()">
+                            Mua ngay
+                        </button>
+                    </div>
+
+                    <div class="product-benefits">
+                        <div class="benefit-item">
+                            <span class="benefit-icon">🚚</span>
+                            <span>Miễn phí vận chuyển cho đơn hàng trên 500.000 VND</span>
+                        </div>
+                        <div class="benefit-item">
+                            <span class="benefit-icon">↩️</span>
+                            <span>Đổi trả trong 7 ngày</span>
+                        </div>
+                        <div class="benefit-item">
+                            <span class="benefit-icon">🔒</span>
+                            <span>Thanh toán an toàn</span>
+                        </div>
+                        <div class="benefit-item">
+                            <span class="benefit-icon">✅</span>
+                            <span>Hàng chính hãng 100%</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <!-- Cột 1: Dịch vụ khách hàng -->
+            <div class="footer-column">
+                <h4>DỊCH VỤ KHÁCH HÀNG</h4>
+                <ul>
+                    <li><a href="#">Trung Tâm Trợ Giúp</a></li>
+                    <li><a href="#">ShopStore Blog</a></li>
+                    <li><a href="#">ShopStore Mall</a></li>
+                    <li><a href="#">Hướng Dẫn Mua Hàng/Đặt Hàng</a></li>
+                    <li><a href="#">Hướng Dẫn Bán Hàng</a></li>
+                    <li><a href="#">Vì ShopStore Pay</a></li>
+                    <li><a href="#">ShopStore Xu</a></li>
+                    <li><a href="#">Đơn Hàng</a></li>
+                    <li><a href="#">Trả Hàng/Hoàn Tiền</a></li>
+                    <li><a href="#">Liên Hệ ShopStore</a></li>
+                    <li><a href="#">Chính Sách Bảo Hành</a></li>
+                </ul>
+            </div>
+
+            <!-- Cột 2: ShopStore Việt Nam -->
+            <div class="footer-column">
+                <h4>SHOPSTORE VIỆT NAM</h4>
+                <ul>
+                    <li><a href="#">Về ShopStore</a></li>
+                    <li><a href="#">Tuyên Dung</a></li>
+                    <li><a href="#">Điều Khoản ShopStore</a></li>
+                    <li><a href="#">Chính Sách Bảo Mật</a></li>
+                    <li><a href="#">ShopStore Mall</a></li>
+                    <li><a href="#">Kênh Người Bán</a></li>
+                    <li><a href="#">Flash Sale</a></li>
+                    <li><a href="#">Tiếp Thị Liên Kết</a></li>
+                    <li><a href="#">Liên Hệ Truyền Thông</a></li>
+                </ul>
+            </div>
+
+            <!-- Cột 3: Thanh toán -->
+            <div class="footer-column">
+                <h4>THANH TOÁN</h4>
+                <div class="payment-methods">
+                    <span class="payment-icon">💳 VISA</span>
+                    <span class="payment-icon">💳 MasterCard</span>
+                    <span class="payment-icon">💳 JCB</span>
+                    <span class="payment-icon">💳 American Express</span>
+                    <span class="payment-icon">📱 ShopeePay</span>
+                    <span class="payment-icon">📱 GCash</span>
+                </div>
+                <h4 style="margin-top: 20px;">ĐƠN VỊ VẬN CHUYỂN</h4>
+                <div class="shipping-methods">
+                    <span class="shipping-icon">📦 SPX</span>
+                    <span class="shipping-icon">📦 Giao hàng Nhanh</span>
+                    <span class="shipping-icon">📦 Viettel Post</span>
+                    <span class="shipping-icon">📦 J&T Express</span>
+                    <span class="shipping-icon">📦 GrabExpress</span>
+                    <span class="shipping-icon">📦 Ahamove</span>
+                    <span class="shipping-icon">📦 Ninja Van</span>
+                    <span class="shipping-icon">📦 BE</span>
+                </div>
+            </div>
+
+            <!-- Cột 4: Theo dõi ShopStore -->
+            <div class="footer-column">
+                <h4>THEO DÕI SHOPSTORE</h4>
+                <div class="social-links">
+                    <a href="#" class="social-icon">f Facebook</a>
+                    <a href="#" class="social-icon">📷 Instagram</a>
+                    <a href="#" class="social-icon">in LinkedIn</a>
+                </div>
+            </div>
+
+            <!-- Cột 5: Tải ứng dụng ShopStore -->
+            <div class="footer-column">
+                <h4>TẢI ỨNG DỤNG SHOPSTORE</h4>
+                <div class="app-download">
+                    <div class="qr-code">🔲 QR Code</div>
+                </div>
+                <div class="app-links">
+                    <a href="#" class="app-link">🍎 App Store</a>
+                    <a href="#" class="app-link">🔵 Google Play</a>
+                    <a href="#" class="app-link">🔴 AppGallery</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer Bottom -->
+        <div class="footer-bottom">
+            <p>&copy; 2026 ShopStore. Tất cả các quyền được bảo lưu.</p>
+            <div class="footer-regions">
+                <span>Quốc gia & Khu vực:</span>
+                <a href="#">Argentina</a>
+                <a href="#">Singapore</a>
+                <a href="#">Indonesia</a>
+                <a href="#">Thái Lan</a>
+                <a href="#">Malaysia</a>
+                <a href="#">Việt Nam</a>
+                <a href="#">Philippines</a>
+                <a href="#">Brazil</a>
+                <a href="#">Mexico</a>
+                <a href="#">Đài Loan</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+    <script src="js/product-detail.js"></script>
+</body>
+</html>
