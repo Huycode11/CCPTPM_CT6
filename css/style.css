@@ -149,11 +149,26 @@ body {
     overflow: hidden;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
 }
 
 .product-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.product-link {
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    cursor: pointer;
+}
+
+.product-link:hover {
+    text-decoration: none;
 }
 
 .product-image {
@@ -187,6 +202,11 @@ body {
     font-size: 1.5rem;
     font-weight: bold;
     margin-bottom: 1rem;
+}
+
+.product-card .btn-add-cart {
+    margin: 0 1.5rem 1.5rem 1.5rem;
+    margin-top: auto;
 }
 
 /* About Section */
